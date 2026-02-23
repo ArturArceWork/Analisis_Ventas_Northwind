@@ -1,0 +1,16 @@
+pip install ...
+
+pandas
+numpy
+matplotlib
+seaborn
+sqlalchemy
+pyodbc
+ipykernel
+
+pip install yfinance
+
+
+streamlit
+
+89996409

@@ -1,0 +1,14 @@
+# Python
+__pycache__/
+*.py[cod]
+
+# Entornos virtuales
+.venv/
+env/
+
+# Datos (No subir CSVs pesados a GitHub)
+data/*.csv
+data/*.xlsx
+
+# Notebooks
+.ipynb_checkpoints/

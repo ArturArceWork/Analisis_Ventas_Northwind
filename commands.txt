@@ -1,0 +1,64 @@
+conda info --envs
+conda activate nameOfEnv
+
+# requirements.txt
+
+1. Descarga el instalador oficial para Linux
+
+wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+
+2. Ejecuta el script de instalación
+
+bash Miniconda3-latest-Linux-x86_64.sh
+
+3. Recarga tu configuración: Para que los cambios surtan efecto sin cerrar la terminal:
+
+source ~/.bashrc
+
+4. Verifica la instalación
+
+conda --version
+
+---------------------------------
+Delete:
+rm Miniconda3-latest-Linux-x86_64.sh
+---------------------------------
+
+#Aceptar Terminos
+
+1. Acepta los Términos de Servicio
+conda tos accept --override-channels --channel https://repo.anaconda.com/pkgs/main
+conda tos accept --override-channels --channel https://repo.anaconda.com/pkgs/r
+
+# Crea un entorno llamado 'northwind' con Python 3.11
+conda create -n project_01 python=3.13 -y
+
+# Activa tu nuevo entorno
+conda activate project_01
+
+3. Manera con archivo .yaml (Environment file)
+Esta es "la forma Conda" y es la más potente, porque guarda no solo los paquetes, sino también los canales y el nombre del entorno.
+
+Crea el archivo: nano environment.yml
+
+Escribe este contenido:
+
+    name: project_01
+    channels:
+    - conda-forge
+    - defaults
+    dependencies:
+    - python=3.13
+    - numpy
+    - ipykernel
+    - pandas    
+    - matplotlib
+    - pip
+
+
+3. Actualiza tu entorno con el archivo
+Como ya tienes el entorno project_01 creado y activo, no vamos a "crearlo" de nuevo, sino a actualizarlo para que lea las dependencias del YAML:
+
+conda env update --file environment.yml --prune
+
+conda list
